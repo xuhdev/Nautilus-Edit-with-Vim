@@ -1,4 +1,4 @@
-nautilus-py-vim version 0.1
+nautilus-py-vim version 0.2
 
 nautilus-py-vim is a nautilus extension written in python, which adds several
 menu items in the nautilus context menu for gvim, which would popup when right

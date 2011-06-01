@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# File: install.sh
+#
+# version 0.2
+# by H Xu
+#
+# This is the install script for nautilus-py-vim.
+
+
 INSTALL_DIRS=(\
   '/usr/lib64/nautilus/extensions-3.0/python' \
   '/usr/lib64/nautilus/extensions-2.0/python' \

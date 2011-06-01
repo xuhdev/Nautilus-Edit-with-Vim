@@ -1,8 +1,10 @@
 # File: nautilusvim.py
 #
-# This file is the major part of nautilus-py-vim.
+# version 0.2
+# by H Xu
 #
-# By Hong Xu
+# This file is the major part of nautilus-py-vim.
+
 
 import os
 import nautilus
