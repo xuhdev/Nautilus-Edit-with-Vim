@@ -2,7 +2,7 @@
 
 # File: install.sh
 #
-# version 0.2
+# version 0.2.1
 # by H Xu
 #
 # This is the install script for nautilus-py-vim.

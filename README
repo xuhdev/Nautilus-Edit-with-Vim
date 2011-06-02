@@ -1,4 +1,4 @@
-nautilus-py-vim version 0.2
+nautilus-py-vim version 0.2.1
 
 nautilus-py-vim is a nautilus extension written in python, which adds several
 menu items in the nautilus context menu for gvim, which would popup when right
@@ -30,6 +30,6 @@ selected), just like what it is like on Windows.
 
 
 Hong Xu
-June 1 2011
+June 2 2011
 
 vim: et sw=4 tw=78

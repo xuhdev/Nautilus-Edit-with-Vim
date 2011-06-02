@@ -1,6 +1,6 @@
 # File: nautilusvim.py
 #
-# version 0.2
+# version 0.2.1
 # by H Xu
 #
 # This file is the major part of nautilus-py-vim.
