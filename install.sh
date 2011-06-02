@@ -8,14 +8,12 @@
 # This is the install script for nautilus-py-vim.
 
 
-INSTALL_DIRS=(\
+for ONE_INSTALL_DIR in\
   '/usr/lib64/nautilus/extensions-3.0/python' \
   '/usr/lib64/nautilus/extensions-2.0/python' \
   '/usr/lib/nautilus/extensions-3.0/python' \
   '/usr/lib/nautilus/extensions-2.0/python' \
-  "$HOME/.nautilus/python-extensions" )
-
-for ONE_INSTALL_DIR in ${INSTALL_DIRS[@]};
+  "$HOME/.nautilus/python-extensions"
 do
   # if we are able to write to the directory, try to copy nautilusvim.py to
   # it.
