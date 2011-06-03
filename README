@@ -1,8 +1,12 @@
 nautilus-py-vim version 0.2.1
 
+1. Overview
+
 nautilus-py-vim is a nautilus extension written in python, which adds several
 menu items in the nautilus context menu for gvim, which would popup when right
 clicking on the file in nautilus file manager, just like gVim on Windows.
+
+2. Install
 
 To install this extension, first make sure that you have installed the
 nautilus python extension(http://projects.gnome.org/nautilus-python):
@@ -28,6 +32,17 @@ with gVim" when only one file is selected, and "Diff with gVim", "Edit with
 Multi gVim", "Edit with a Single gVim" are present when several files are
 selected), just like what it is like on Windows.
 
+3. Configuration
+
+To configure the extension, you could write a config file. nautilus-py-vim
+will search the config file in the order of the following files:
+
+~/.nautilusvim.conf
+~/.nautilus/nautilusvim.conf
+/etc/nautilusvim.conf
+
+For the content of the config file, you could take a look at the
+"example.conf".
 
 Hong Xu
 June 2 2011
