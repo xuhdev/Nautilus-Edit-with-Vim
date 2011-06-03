@@ -32,7 +32,7 @@ class NautilusVimExtension(nautilus.MenuProvider):
         # search config files and set conf_file to the file path
         for a_file in [
                 home_dir + '/.nautilusvim.conf',
-                home_dir + '/.nautilus/.nautilusvim.conf',
+                home_dir + '/.nautilus/nautilusvim.conf',
                 '/etc/nautilusvim.conf']:
             if os.path.isfile(a_file) and os.access(a_file, os.R_OK):
                 conf_file = a_file
