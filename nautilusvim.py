@@ -46,12 +46,18 @@ class NautilusVimExtension(nautilus.MenuProvider):
 
         cf.read(conf_file)
 
-        tmpval = cf.get('cmds', 'gvim')
-        if tmpval != None:
+        try:
+            tmpval = cf.get('cmds', 'gvim')
+        except:
+            pass
+        else:
             self.gvim_cmd = tmpval
 
-        tmpval = cf.get('cmds', 'gvimdiff')
-        if tmpval != None:
+        try:
+            tmpval = cf.get('cmds', 'gvimdiff')
+        except:
+            pass
+        else:
             self.gvimdiff_cmd = tmpval
 
 
