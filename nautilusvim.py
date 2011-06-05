@@ -21,10 +21,6 @@ class NautilusVimExtension(nautilus.MenuProvider):
     # read config file and set values
     def read_conf_file(self):
 
-        # first set default value
-        self.gvim_cmd = 'gvim'
-        self.gvimdiff_cmd = 'gvim -d'
-
         home_dir = os.getenv('HOME', '/');
 
         conf_file = None
@@ -38,27 +34,20 @@ class NautilusVimExtension(nautilus.MenuProvider):
                 conf_file = a_file
                 break
 
-        if conf_file == None:
-            return
-
         # read the config file
         cf = ConfigParser.ConfigParser(False)
 
-        cf.read(conf_file)
+        # set default values
+        cf.add_section('cmds')
+        cf.set('cmds', 'gvim', 'gvim')
+        cf.set('cmds', 'gvimdiff', 'gvim -d')
 
-        try:
-            tmpval = cf.get('cmds', 'gvim')
-        except:
-            pass
-        else:
-            self.gvim_cmd = tmpval
+        # if we have found a config file, then load it
+        if conf_file != None:
+            cf.read(conf_file)
 
-        try:
-            tmpval = cf.get('cmds', 'gvimdiff')
-        except:
-            pass
-        else:
-            self.gvimdiff_cmd = tmpval
+        self.gvim_cmd = cf.get('cmds', 'gvim')
+        self.gvimdiff_cmd = cf.get('cmds', 'gvimdiff')
 
 
     #edit with single gvim
