@@ -13,6 +13,14 @@ nautilus python extension(http://projects.gnome.org/nautilus-python):
 On Fedora:          # yum install nautilus-python
 On Debian/Ubuntu:   # apt-get install python-nautilus
 
+If you want to enable the "Edit with gVim as Root" menu item, you should
+install gksu(http://www.nongnu.org/gksu),
+beesu(http://honeybeenet.altervista.org/beesu) or
+kdesu(http://techbase.kde.org/Projects/kdesu):
+
+On Fedora:          # yum install beesu
+On Debian/Ubuntu:   # apt-get install gksu
+
 After that, just run "install.sh":
 
 $ ./install.sh
