@@ -16,10 +16,10 @@ class NautilusVimExtension(nautilus.MenuProvider):
 
     def __init__(self):
         self.client = gconf.client_get_default()
-        self.read_conf_file()
+        self.__read_conf_file()
 
     # read config file and set values
-    def read_conf_file(self):
+    def __read_conf_file(self):
 
         home_dir = os.getenv('HOME', '/');
 
