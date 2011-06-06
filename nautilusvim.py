@@ -41,6 +41,7 @@ class NautilusVimExtension(nautilus.MenuProvider):
         cf.add_section('cmds')
         cf.set('cmds', 'gvim', 'gvim')
         cf.set('cmds', 'gvimdiff', 'gvim -d')
+        cf.set('cmds', 'auth', 'gksu -k,beesu -m -c,kdesu -c')
 
         # if we have found a config file, then load it
         if conf_file != None:
@@ -48,7 +49,21 @@ class NautilusVimExtension(nautilus.MenuProvider):
 
         self.gvim_cmd = cf.get('cmds', 'gvim')
         self.gvimdiff_cmd = cf.get('cmds', 'gvimdiff')
+        self.auth_cmds = [cmd.strip()
+                for cmd in cf.get('cmds', 'auth').split(',')]
 
+    def __execute_as_root(self, cmd):
+        # execute commands as root
+
+        for auth_cmd in self.auth_cmds:
+            try:
+                os.system(auth_cmd + ' ' + cmd)
+            except:
+                continue
+            else:
+                return 0
+        
+        return 1
 
     #edit with single gvim
     def menu_activate_cb_single(self, menu, files):
@@ -57,6 +72,14 @@ class NautilusVimExtension(nautilus.MenuProvider):
             cmd_string += " '" + afile.get_location().get_path() + "'"
 
         os.system(cmd_string)
+
+    # edit with single gvim, root privilege
+    def menu_activate_cb_single_root(self, menu, files):
+        cmd_string = self.gvim_cmd
+        for afile in files:
+            cmd_string += " '" + afile.get_location().get_path() + "'"
+
+        self.__execute_as_root(cmd_string)
 
     # edit with mutli gvim
     def menu_activate_cb_multi(self, menu, files):
@@ -83,12 +106,28 @@ class NautilusVimExtension(nautilus.MenuProvider):
             new_item.connect('activate', self.menu_activate_cb_single, files)
             items.append(new_item)
 
+            new_item = nautilus.MenuItem(
+                'NautilusPython::nautilusvim_file_item_root',
+                'Edit with gVim as root',
+                'Edit with gVim Editor as root')
+            new_item.connect('activate', self.menu_activate_cb_single_root,
+                    files)
+            items.append(new_item)
+
         elif len(files) > 1:
             new_item = nautilus.MenuItem(
                 'NautilusPython::nautilusvim_single_file_item',
                 'Edit with a Single gVim',
                 'Edit with a Single gVim Editor')
             new_item.connect('activate', self.menu_activate_cb_single, files)
+            items.append(new_item)
+
+            new_item = nautilus.MenuItem(
+                'NautilusPython::nautilusvim_single_file_item_root',
+                'Edit with a Single gVim as root',
+                'Edit with a Single gVim Editor as root')
+            new_item.connect('activate', self.menu_activate_cb_single_root,
+                    files)
             items.append(new_item)
 
             new_item = nautilus.MenuItem(
