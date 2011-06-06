@@ -1,4 +1,4 @@
-nautilus-py-vim version 0.2.1
+nautilus-py-vim version 0.3
 
 1. Overview
 
@@ -60,6 +60,6 @@ values.
 Run the uninstall shell script.
 
 Hong Xu
-June 2 2011
+June 6 2011
 
 vim: et sw=4 tw=78

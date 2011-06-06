@@ -2,6 +2,9 @@
 
 # File: uninstall.sh
 #
+# Version 0.3
+# by H Xu
+#
 # the uninstall script for nautilus-py-vim
 
 INSTALLATION_FOUND=0
