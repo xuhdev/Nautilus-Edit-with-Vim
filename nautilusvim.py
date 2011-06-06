@@ -42,6 +42,11 @@ class NautilusVimExtension(nautilus.MenuProvider):
         cf.set('cmds', 'gvim', 'gvim')
         cf.set('cmds', 'gvimdiff', 'gvim -d')
         cf.set('cmds', 'auth', 'gksu -k,beesu -m -c,kdesu -c')
+        cf.add_section('prefs')
+        # by default we don't fold menu items when right click on a single
+        # file, but fold when right click on several files
+        cf.set('prefs', 'fold_single', '0')
+        cf.set('prefs', 'fold_multi', '1')
 
         # if we have found a config file, then load it
         if conf_file != None:
@@ -51,6 +56,8 @@ class NautilusVimExtension(nautilus.MenuProvider):
         self.gvimdiff_cmd = cf.get('cmds', 'gvimdiff')
         self.auth_cmds = [cmd.strip()
                 for cmd in cf.get('cmds', 'auth').split(',')]
+        self.pref_fold_single = cf.getboolean('prefs', 'fold_single')
+        self.pref_fold_multi = cf.getboolean('prefs', 'fold_multi')
 
     def __execute_as_root(self, cmd):
         # execute commands as root
@@ -144,8 +151,24 @@ class NautilusVimExtension(nautilus.MenuProvider):
             new_item.connect('activate', self.menu_activate_cb_diff, files)
             items.append(new_item)
 
+        # if user choose to fold and sub menu item is supported, then set sub
+        # menus
+        if (((len(files) == 1 and self.pref_fold_single) or
+                (len(files) > 1 and self.pref_fold_multi)) and
+                hasattr(nautilus, 'Menu')):
+            root_item = nautilus.MenuItem(
+                    'NautilusPython::nautilusvim_root_item',
+                    'NautilusVim',
+                    'Nautilus extension for Vim')
 
-        return items
+            sub_menu = nautilus.Menu()
+            root_item.set_submenu(sub_menu)
+            for item in items:
+                sub_menu.append_item(item)
+
+            return [root_item]
+        else:
+            return items
 
 # vim703: cc=78
 # vim: et tw=78 sw=4 ts=4
