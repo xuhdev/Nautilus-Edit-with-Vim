@@ -10,13 +10,9 @@
 INSTALLATION_FOUND=0
 
 for ONE_DIR in\
-    '/usr/local/lib64/nautilus/extensions-3.0'\
     '/usr/local/lib64/nautilus/extensions-2.0'\
-    '/usr/local/lib/nautilus/extensions-3.0'\
     '/usr/local/lib/nautilus/extensions-2.0'\
-    '/usr/lib64/nautilus/extensions-3.0'\
     '/usr/lib64/nautilus/extensions-2.0'\
-    '/usr/lib/nautilus/extensions-3.0'\
     '/usr/lib/nautilus/extensions-2.0'\
     "$HOME/.nautilus/python-extensions"
 do

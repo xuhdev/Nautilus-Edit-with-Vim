@@ -9,13 +9,9 @@
 
 
 for ONE_INSTALL_DIR in\
-  '/usr/local/lib64/nautilus/extensions-3.0/python' \
   '/usr/local/lib64/nautilus/extensions-2.0/python' \
-  '/usr/local/lib/nautilus/extensions-3.0/python' \
   '/usr/local/lib/nautilus/extensions-2.0/python' \
-  '/usr/lib64/nautilus/extensions-3.0/python' \
   '/usr/lib64/nautilus/extensions-2.0/python' \
-  '/usr/lib/nautilus/extensions-3.0/python' \
   '/usr/lib/nautilus/extensions-2.0/python' \
   "$HOME/.nautilus/python-extensions"
 do
