@@ -1,35 +1,42 @@
-nautilus-py-vim version 0.3
+# nautilus-edit-with-vim
 
-1. Overview
+## Overview
 
-nautilus-py-vim is an extension for nautilus, the GNOME file manager, and is
+nautilus-edit-with-vim is an extension for nautilus, the GNOME file manager, and is
 written in python. This extension adds several menu items in the nautilus
 right-click context menu for gvim, just like gVim on Windows.
 
-2. Install
+## . Install
 
 To install this extension, first make sure that you have installed the
-nautilus python extension(http://projects.gnome.org/nautilus-python):
-On Fedora:          # yum install nautilus-python
-On Debian/Ubuntu:   # apt-get install python-nautilus
+[nautilus python extension](http://projects.gnome.org/nautilus-python):
+
+    # On Fedora
+    yum install nautilus-python
+
+    # On Debian/Ubuntu
+    apt-get install python-nautilus
 
 If you want to enable the "Edit with gVim as Root" menu item, you should
-install gksu(http://www.nongnu.org/gksu),
-beesu(http://honeybeenet.altervista.org/beesu) or
-kdesu(http://techbase.kde.org/Projects/kdesu):
+install [gksu](http://www.nongnu.org/gksu),
+[beesu](http://honeybeenet.altervista.org/beesu) or
+[kdesu](http://techbase.kde.org/Projects/kdesu):
 
-On Fedora:          # yum install beesu
-On Debian/Ubuntu:   # apt-get install gksu
+    $ # On Fedora:
+    $ sudo yum install beesu
+
+    $ # On Debian/Ubuntu
+    $ sudo apt-get install gksu
 
 After that, just run "install.sh":
 
-$ ./install.sh
+    $ ./install.sh
 
 The above command would make this extension available to you only, not other
 users. If you want every user on the machine could use this extension, run the
 install.sh with root privilege:
 
-# ./install.sh
+    # ./install.sh
 
 If you encounter any problem when executing the command above, try to execute
 "bash install.sh" or "ksh install.sh".
@@ -52,14 +59,10 @@ will search the config file in the order of the following files:
 For the content of the config file, you could take a look at the
 "example.conf".
 
-If none of the configuration files are found, nautilus-py-vim will use default
-values.
+If none of the configuration files are found, nautilus-edit-with-vim will use
+default values.
 
-4. Uninstall
+## Uninstall
 
 Run the uninstall shell script.
 
-Hong Xu
-June 6 2011
-
-vim: et sw=4 tw=78
