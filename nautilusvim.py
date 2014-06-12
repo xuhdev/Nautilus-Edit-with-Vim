@@ -3,19 +3,17 @@
 # version 0.3
 # by H Xu
 #
-# This file is the major part of nautilus-py-vim.
+# This file is the major part of nautilus-edit-with-vim.
 
 
 import os
-import nautilus
-import gconf
+from gi.repository import Nautilus, GObject
 import ConfigParser
 
 
-class NautilusVimExtension(nautilus.MenuProvider):
+class NautilusVimExtension(GObject.GObject, Nautilus.MenuProvider):
 
     def __init__(self):
-        self.client = gconf.client_get_default()
         self.__read_conf_file()
 
     # read config file and set values
@@ -106,48 +104,48 @@ class NautilusVimExtension(nautilus.MenuProvider):
         items = []
 
         if len(files) == 1:
-            new_item = nautilus.MenuItem(
-                'NautilusPython::nautilusvim_file_item',
-                'Edit with gVim',
-                'Edit with gVim Editor')
+            new_item = Nautilus.MenuItem(
+                name = 'NautilusVim::nautilusvim_file_item',
+                label = 'Edit with gVim',
+                tip = 'Edit with gVim Editor')
             new_item.connect('activate', self.menu_activate_cb_single, files)
             items.append(new_item)
 
-            new_item = nautilus.MenuItem(
-                'NautilusPython::nautilusvim_file_item_root',
-                'Edit with gVim as root',
-                'Edit with gVim Editor as root')
+            new_item = Nautilus.MenuItem(
+                name = 'NautilusVim::nautilusvim_file_item_root',
+                label = 'Edit with gVim as root',
+                tip = 'Edit with gVim Editor as root')
             new_item.connect('activate', self.menu_activate_cb_single_root,
                     files)
             items.append(new_item)
 
         elif len(files) > 1:
-            new_item = nautilus.MenuItem(
-                'NautilusPython::nautilusvim_single_file_item',
-                'Edit with a Single gVim',
-                'Edit with a Single gVim Editor')
+            new_item = Nautilus.MenuItem(
+                name = 'NautilusVim::nautilusvim_single_file_item',
+                label = 'Edit with a Single gVim',
+                tip = 'Edit with a Single gVim Editor')
             new_item.connect('activate', self.menu_activate_cb_single, files)
             items.append(new_item)
 
-            new_item = nautilus.MenuItem(
-                'NautilusPython::nautilusvim_single_file_item_root',
-                'Edit with a Single gVim as root',
-                'Edit with a Single gVim Editor as root')
+            new_item = Nautilus.MenuItem(
+                name = 'NautilusVim::nautilusvim_single_file_item_root',
+                label = 'Edit with a Single gVim as root',
+                tip = 'Edit with a Single gVim Editor as root')
             new_item.connect('activate', self.menu_activate_cb_single_root,
                     files)
             items.append(new_item)
 
-            new_item = nautilus.MenuItem(
-                'NautilusPython::nautilusvim_multi_file_item',
-                'Edit with Multi gVim',
-                'Edit with Mutli gVim Editors')
+            new_item = Nautilus.MenuItem(
+                name = 'NautilusVim::nautilusvim_multi_file_item',
+                label = 'Edit with Multi gVim',
+                tip = 'Edit with Mutli gVim Editors')
             new_item.connect('activate', self.menu_activate_cb_multi, files)
             items.append(new_item)
 
-            new_item = nautilus.MenuItem(
-                'NautilusPython::nautilusvim_diff_file_item',
-                'Diff with gVim',
-                'Diff with gVim')
+            new_item = Nautilus.MenuItem(
+                name = 'NautilusVim::nautilusvim_diff_file_item',
+                label = 'Diff with gVim',
+                tip = 'Diff with gVim')
             new_item.connect('activate', self.menu_activate_cb_diff, files)
             items.append(new_item)
 
@@ -155,13 +153,13 @@ class NautilusVimExtension(nautilus.MenuProvider):
         # menus
         if (((len(files) == 1 and self.pref_fold_single) or
                 (len(files) > 1 and self.pref_fold_multi)) and
-                hasattr(nautilus, 'Menu')):
-            root_item = nautilus.MenuItem(
-                    'NautilusPython::nautilusvim_root_item',
-                    'NautilusVim',
-                    'Nautilus extension for Vim')
+                hasattr(Nautilus, 'Menu')):
+            root_item = Nautilus.MenuItem(
+                    name = 'NautilusVim::nautilusvim_root_item',
+                    label = 'NautilusVim',
+                    tip = 'Nautilus extension for Vim')
 
-            sub_menu = nautilus.Menu()
+            sub_menu = Nautilus.Menu()
             root_item.set_submenu(sub_menu)
             for item in items:
                 sub_menu.append_item(item)
