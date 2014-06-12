@@ -1,0 +1,17 @@
+
+root = true
+
+[*]
+end_of_line = LF
+
+[*.py]
+indent_style = space
+indent_size = 4
+max_line_length = 80
+charset = UTF-8
+
+[*.sh]
+indent_style = space
+indent_size = 2
+max_line_length = 80
+charset = UTF-8
