@@ -33,11 +33,11 @@ install [gksu](http://www.nongnu.org/gksu),
 
 After that, run the following command to install in user directory:
 
-    $ curl -L http://github.com/xuhdev/nautilus-edit-with-vim/raw/master/nautilusvim.py >~/.local/share/nautilus-python/extensions/nautilusvim.py
+    $ curl -L http://github.com/xuhdev/nautilus-edit-with-vim/raw/master/nautilus-edit-with-vim.py >~/.local/share/nautilus-python/extensions/nautilus-edit-with-vim.py
 
 Or to install system-widely:
 
-    # curl -L http://github.com/xuhdev/nautilus-edit-with-vim/raw/master/nautilusvim.py >$XDG_DATA_DIR/share/nautilus-python/extensions/nautilusvim.py
+    # curl -L http://github.com/xuhdev/nautilus-edit-with-vim/raw/master/nautilus-edit-with-vim.py >$XDG_DATA_DIR/share/nautilus-python/extensions/nautilus-edit-with-vim.py
 
 Then restart nautilus(execute "nautilus -q") and try to right click on the
 file(s) you want to edit, you will see the changes in the context menu("Edit
@@ -48,11 +48,11 @@ selected), just like what it is like on Windows.
 ## Configuration
 
 To configure the extension, you could write a config file. Nautilus-Edit-with-Vim
-will search the config file in the order of the following files:
+will search for the config file in the order of the following files:
 
-- ~/.nautilusvim.conf
-- ~/.nautilus/nautilusvim.conf
-- /etc/nautilusvim.conf
+- ~/.nautilus-edit-with-vim.conf
+- ~/.nautilus/nautilus-edit-with-vim.conf
+- /etc/nautilus-edit-with-vim.conf
 
 For the content of the config file, you could take a look at the
 [example.conf][].
@@ -64,11 +64,11 @@ default values.
 
 Remove user's local installation:
 
-    rm ~/.local/share/nautilus-python/extensions/nautilusvim.py
+    rm ~/.local/share/nautilus-python/extensions/nautilus-edit-with-vim.py
 
 Remove a system-wide installation:
 
-    rm $XDG_DATA_DIR/share/nautilus-python/extensions/nautilusvim.py
+    rm $XDG_DATA_DIR/share/nautilus-python/extensions/nautilus-edit-with-vim.py
 
 
 
