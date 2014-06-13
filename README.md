@@ -2,9 +2,12 @@
 
 ## Overview
 
-Nautilus-Edit-with-Vim is an extension for nautilus, the GNOME file manager,
-and is written in python. This extension adds several menu items in the
-nautilus right-click context menu for gvim, just like gVim on Windows.
+Nautilus-Edit-with-Vim is an extension for Nautilus, the GNOME file manager,
+written in python. This extension adds several menu items in the nautilus
+right-click context menu for gvim, just like gVim on Windows. This version of
+the extension works on Nautilus 3.
+
+**NOTE**: If you are using Nautilus 2, please use the [nautilus-2 branch][].
 
 ## Install
 
@@ -69,4 +72,5 @@ Remove a system-wide installation:
 
 
 
-[example.conf]: https://github.com/xuhdev/nautilus-edit-with-vim/blob/master/example.conf
+[example.conf]: http://github.com/xuhdev/nautilus-edit-with-vim/blob/master/example.conf
+[nautilus-2 branch]: http://github.com/xuhdev/nautilus-edit-with-vim/tree/nautilus-2
