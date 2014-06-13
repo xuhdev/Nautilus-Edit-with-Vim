@@ -69,4 +69,4 @@ Remove a system-wide installation:
 
 
 
-[example.conf]: http://github.com/xuhdev/nautilus-edit-with-vim/raw/master/nautilusvim.py
+[example.conf]: https://github.com/xuhdev/nautilus-edit-with-vim/blob/master/example.conf
