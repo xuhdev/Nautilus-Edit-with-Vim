@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Nautilus-Edit-with-Vim: Edit with Vim in Nautilus </title>
+
+    <style type="text/css">
+      body {
+        margin-top: 1.0em;
+        background-color: #ffffff;
+        font-family: Helvetica, Arial, FreeSans, san-serif;
+        color: #000000;
+      }
+      #container {
+        margin: 0 auto;
+        width: 700px;
+      }
+      h1 { font-size: 3.8em; color: #000000; margin-bottom: 3px; }
+      h1 .small { font-size: 0.4em; }
+      h1 a { text-decoration: none }
+      h2 { font-size: 1.5em; color: #000000; }
+      h3 { text-align: center; color: #000000; }
+      a { color: blue; }
+      .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+      .download { float: right; }
+      pre { background: #000; color: #fff; padding: 15px;}
+      hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+      .footer { text-align:center; padding-top:30px; font-style: italic; }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+
+      <h1>
+        Nautilus-Edit-with-Vim
+      </h1>
+
+      <div class="description">
+        A nautilus extension aimed at helping start editing with vim fast and
+        conveniently on GNOME.
+      </div>
+
+      <p><strong>NOTE: This page is the Nautilus-Edit-with-Vim for Nautilus 2,
+        which is an outdated version. Please visit <a
+          href=http://nautilusvim.topbug.net>this page</a> to check out the latest
+        version.</strong>
+      </p>
+
+      <p>
+      Nautilus-Edit-with-Vim is an extension for nautilus, the GNOME file
+      manager, and is written in python. This extension adds several menu items
+      in the nautilus right-click context menu for gvim, such as "Edit with
+      gVim", etc, just like gVim on Windows.
+      </p>
+
+      <h2>Screenshot</h2>
+      <p>
+      <img src=img/screenshot_single.png alt="Screenshot of a Single File"/>
+      <img src=img/screenshot_multi.png alt="Screenshot of Multiple Files"/>
+      </p>
+
+      <h2>Dependencies</h2>
+      <p>
+      <a href=http://www.vim.org>gvim</a><br>
+      <a href=http://projects.gnome.org/nautilus-python>nautilus-python</a><br>
+      <a href=http://www.nongnu.org/gksu>gksu</a>, 
+      <a href=http://honeybeenet.altervista.org/beesu>beesu</a>, or 
+      <a href=http://techbase.kde.org/Projects/kdesu>kdesu</a><br>
+      </p>
+      <h2>Install</h2>
+      <p>
+      To install this plugin, first make sure that you have installed the
+      <a href=http://projects.gnome.org/nautilus-python>nautilus python extension</a>:<br>
+      <br>
+      On Fedora:<br>
+      <pre># yum install nautilus-python</pre>
+      On Debian/Ubuntu:<br>
+      <pre># apt-get install python-nautilus</pre>
+      <br>
+      If you want to enable the "Edit with gVim as Root" menu item, you should
+      install
+      <a href=http://www.nongnu.org/gksu>gksu</a>, 
+      <a href=http://honeybeenet.altervista.org/beesu>beesu</a>, or 
+      <a href=http://techbase.kde.org/Projects/kdesu>kdesu</a>:<br>
+      <br>
+      On Fedora:<br>
+      <pre># yum install beesu</pre>
+      On Debian/Ubuntu:<br>
+      <pre># apt-get install gksu</pre>
+      <br>
+      After that, just run "install.sh":<br>
+      <br>
+      <pre>$ ./install.sh</pre><br>
+      <br>
+      The above command would make this extension available to you only, not other
+      users. If you want every user on the machine could use this extension, run the
+      install.sh with root privilege:<br>
+      <br>
+      <pre># ./install.sh</pre><br>
+      <br>
+      If you encounter any problem when executing the command above, try to
+      execute "bash install.sh" or "ksh install.sh".<br>
+      <br>
+      Then restart nautilus(execute "nautilus -q") and try to right click on the
+      file(s) you want to edit, you will see the changes in the context menu("Edit
+      with gVim" when only one file is selected, and "Diff with gVim", "Edit with
+      Multi gVim", "Edit with a Single gVim" are present when several files are
+      selected), just like what it is like on Windows.<br>
+      <br>
+      If you want to uninstall this extension, just run uninstall.sh.<br>
+      </p>
+      <h2>License</h2>
+      <p><a href=http://www.gnu.org/licenses/gpl-3.0.html>GPL v3</a></p>
+      <h2>Author</h2>
+      <p><a href=http://www.topbug.net>Hong Xu</a> (<a href="mailto:Hong Xu<hong@topbug.net>">hong@topbug.net</a>)</p>
+
+      <h2>Download</h2>
+      <p>
+      The latest stable version is 0.3.1 (for Nautilus 2).
+      Click <a href="https://github.com/xuhdev/nautilus-edit-with-vim/archive/v0.3.1.tar.gz">here</a>
+      to download the latest stable release.<br>
+      </p>
+
+      <h2>Bug Report and Feature Request</h2>
+      <p>
+      If you find any bug or you have some good suggestions, please submit it on the
+      <a href=https://github.com/xuhdev/nautilus-edit-with-vim/issues>issue tracker</a>.
+      </p>
+
+      <h2>For Developers</h2>
+      <p>
+      This project is hosted with <a href=http://git-scm.org>git</a>, a distributed revision control system.<br>
+      Click <a href=http://github.com/xuhdev/nautilus-edit-with-vim>here</a> to visit the code repository page.
+      </p>
+
+      <div class="footer">
+      </div>
+
+    </div>
+
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+try {
+  var pageTracker = _gat._getTracker("UA-29984794-3");
+  pageTracker._trackPageview();
+} catch(err) {}
+    </script>
+  </body>
+</html>
+
+<!-- vim: sw=2 ts=2 sts=2 et
+-->
