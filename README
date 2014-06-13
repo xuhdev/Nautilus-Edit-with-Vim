@@ -1,10 +1,14 @@
-nautilus-py-vim version 0.3
+Nautilus-Edit-with-Vim version 0.3.1
+
+Note: This extension is for Nautilus 2. No new feature will be added in the
+future. For Nautilus 3, please visit
+https://github.com/xuhdev/nautilus-edit-with-vim.
 
 1. Overview
 
-nautilus-py-vim is an extension for nautilus, the GNOME file manager, and is
-written in python. This extension adds several menu items in the nautilus
-right-click context menu for gvim, just like gVim on Windows.
+Nautilus-Edit-with-Vim is an extension for nautilus, the GNOME file manager,
+and is written in python. This extension adds several menu items in the
+nautilus right-click context menu for gvim, just like gVim on Windows.
 
 2. Install
 
@@ -42,8 +46,9 @@ selected), just like what it is like on Windows.
 
 3. Configuration
 
-To configure the extension, you could write a config file. nautilus-py-vim
-will search the config file in the order of the following files:
+To configure the extension, you could write a config file.
+Nautilus-Edit-with-Vim will search the config file in the order of the
+following files:
 
 ~/.nautilusvim.conf
 ~/.nautilus/nautilusvim.conf
@@ -52,8 +57,8 @@ will search the config file in the order of the following files:
 For the content of the config file, you could take a look at the
 "example.conf".
 
-If none of the configuration files are found, nautilus-py-vim will use default
-values.
+If none of the configuration files are found, Nautilus-Edit-with-Vim will use
+default values.
 
 4. Uninstall
 
