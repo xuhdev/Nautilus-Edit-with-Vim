@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Nautilus-edit-with-vim : A nautilus python extension which adds several menu items to nautilus for gvim" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Nautilus-edit-with-vim</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/xuhdev/Nautilus-Edit-with-Vim">View on GitHub</a>
+
+          <h1 id="project_title">Nautilus-edit-with-vim</h1>
+          <h2 id="project_tagline">A nautilus python extension which adds several menu items to nautilus for gvim</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/xuhdev/Nautilus-Edit-with-Vim/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/xuhdev/Nautilus-Edit-with-Vim/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="nautilus-edit-with-vim" class="anchor" href="#nautilus-edit-with-vim"><span class="octicon octicon-link"></span></a>Nautilus-Edit-with-Vim</h1>
+
+<h2>
+<a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>Nautilus-Edit-with-Vim is an extension for Nautilus, the GNOME file manager,
+written in python. This extension adds several menu items in the nautilus
+right-click context menu for gvim, just like gVim on Windows. This version of
+the extension works on Nautilus 3.</p>
+
+<p><strong>NOTE</strong>: If you are using Nautilus 2, please use the <a href="http://github.com/xuhdev/nautilus-edit-with-vim/tree/nautilus-2">nautilus-2 branch</a>.</p>
+
+<h2>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<p>To install this extension, first make sure that you have installed the
+<a href="http://projects.gnome.org/nautilus-python">nautilus python extension</a>:</p>
+
+<pre><code>$ # On Fedora
+$ sudo yum install nautilus-python
+
+$ # On Debian/Ubuntu
+$ sudo apt-get install python-nautilus
+</code></pre>
+
+<p>If you want to enable the "Edit with gVim as Root" menu item, you should
+install <a href="http://www.nongnu.org/gksu">gksu</a>,
+<a href="http://honeybeenet.altervista.org/beesu">beesu</a> or
+<a href="http://techbase.kde.org/Projects/kdesu">kdesu</a>:</p>
+
+<pre><code>$ # On Fedora:
+$ sudo yum install beesu
+
+$ # On Debian/Ubuntu
+$ sudo apt-get install gksu
+</code></pre>
+
+<p>After that, run the following command to install in user directory:</p>
+
+<pre><code>curl -L http://github.com/xuhdev/nautilus-edit-with-vim/raw/master/nautilus-edit-with-vim.py &gt;~/.local/share/nautilus-python/extensions/nautilus-edit-with-vim.py
+</code></pre>
+
+<p>Or to install system-widely:</p>
+
+<pre><code>sudo curl -L http://github.com/xuhdev/nautilus-edit-with-vim/raw/master/nautilus-edit-with-vim.py &gt;$XDG_DATA_DIR/share/nautilus-python/extensions/nautilus-edit-with-vim.py
+</code></pre>
+
+<p>Then restart nautilus(execute "nautilus -q") and try to right click on the
+file(s) you want to edit, you will see the changes in the context menu("Edit
+with gVim" when only one file is selected, and "Diff with gVim", "Edit with
+Multi gVim", "Edit with a Single gVim" are present when several files are
+selected), just like what it is like on Windows.</p>
+
+<h2>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
+<p>To configure the extension, you could write a config file. Nautilus-Edit-with-Vim
+will search for the config file in the order of the following files:</p>
+
+<ul>
+<li>~/.nautilus-edit-with-vim.conf</li>
+<li>~/.nautilus/nautilus-edit-with-vim.conf</li>
+<li>/etc/nautilus-edit-with-vim.conf</li>
+</ul><p>For the content of the config file, you could take a look at the
+<a href="http://github.com/xuhdev/nautilus-edit-with-vim/blob/master/example.conf">example.conf</a>.</p>
+
+<p>If none of the configuration files are found, Nautilus-Edit-with-Vim will use
+default values.</p>
+
+<h2>
+<a name="uninstall" class="anchor" href="#uninstall"><span class="octicon octicon-link"></span></a>Uninstall</h2>
+
+<p>Remove user's local installation:</p>
+
+<pre><code>rm ~/.local/share/nautilus-python/extensions/nautilus-edit-with-vim.py
+</code></pre>
+
+<p>Remove a system-wide installation:</p>
+
+<pre><code>rm $XDG_DATA_DIR/share/nautilus-python/extensions/nautilus-edit-with-vim.py
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Nautilus-edit-with-vim maintained by <a href="https://github.com/xuhdev">xuhdev</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-29984794-3");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
