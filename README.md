@@ -1,12 +1,12 @@
-# nautilus-edit-with-vim
+# Nautilus-Edit-with-Vim
 
 ## Overview
 
-nautilus-edit-with-vim is an extension for nautilus, the GNOME file manager, and is
-written in python. This extension adds several menu items in the nautilus
-right-click context menu for gvim, just like gVim on Windows.
+Nautilus-Edit-with-Vim is an extension for nautilus, the GNOME file manager,
+and is written in python. This extension adds several menu items in the
+nautilus right-click context menu for gvim, just like gVim on Windows.
 
-## . Install
+## Install
 
 To install this extension, first make sure that you have installed the
 [nautilus python extension](http://projects.gnome.org/nautilus-python):
@@ -28,18 +28,13 @@ install [gksu](http://www.nongnu.org/gksu),
     $ # On Debian/Ubuntu
     $ sudo apt-get install gksu
 
-After that, just run "install.sh":
+After that, run the following command to install in user directory:
 
-    $ ./install.sh
+    $ curl -L http://github.com/xuhdev/nautilus-edit-with-vim/raw/master/nautilusvim.py >~/.local/share/nautilus-python/extensions
 
-The above command would make this extension available to you only, not other
-users. If you want every user on the machine could use this extension, run the
-install.sh with root privilege:
+Or to install system-widely:
 
-    # ./install.sh
-
-If you encounter any problem when executing the command above, try to execute
-"bash install.sh" or "ksh install.sh".
+    # curl -L http://github.com/xuhdev/nautilus-edit-with-vim/raw/master/nautilusvim.py >$XDG_DATA_DIR/share/nautilus-python/extensions
 
 Then restart nautilus(execute "nautilus -q") and try to right click on the
 file(s) you want to edit, you will see the changes in the context menu("Edit
@@ -47,7 +42,7 @@ with gVim" when only one file is selected, and "Diff with gVim", "Edit with
 Multi gVim", "Edit with a Single gVim" are present when several files are
 selected), just like what it is like on Windows.
 
-3. Configuration
+## Configuration
 
 To configure the extension, you could write a config file. nautilus-py-vim
 will search the config file in the order of the following files:
@@ -59,7 +54,7 @@ will search the config file in the order of the following files:
 For the content of the config file, you could take a look at the
 "example.conf".
 
-If none of the configuration files are found, nautilus-edit-with-vim will use
+If none of the configuration files are found, Nautilus-Edit-with-Vim will use
 default values.
 
 ## Uninstall
