@@ -148,6 +148,10 @@ img {
   -ms-box-shadow: 0 0 5px #ebebeb;
 }
 
+img.screenshot {
+  max-width: 100%;
+}
+
 p img {
   display: inline;
   margin: 0;
